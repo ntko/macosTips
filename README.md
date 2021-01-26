@@ -9,6 +9,9 @@ macOs(m1)常见问题及技巧
     - [Finder(访达)](#finder访达)
         - [显示隐藏文件](#显示隐藏文件)
         - [默认显示列表视图](#默认显示列表视图)
+        - [自定义快捷键](#自定义快捷键)
+    - [终端](#终端)
+        - [自定义提示符](#自定义提示符)
         - [表格示例](#表格示例)
 
 <!-- /TOC -->
@@ -43,7 +46,48 @@ macOs(m1)常见问题及技巧
 
 打开访达，顶部菜单显示，查看显示选项。
 
+### 自定义快捷键
 
+![plugin img](imgs/cshortcutkey.png?raw=true)
+
+## 终端
+
+### 自定义提示符
+
+- Open the terminal
+- Type touch ~/.zshrc to create the file.
+- Open the ~/.zshrc file using vim, nedit, or any other text editor. If you’re accessing the file through Finder, use Cmd + Shift + . to show the hidden files. You’ll want to add the PROMPT variable to this file, as described below.
+
+SEE：
+
+[Customize the MacOS Terminal PDF](pdfs/CustomizeMacOSTerminal.pdf?raw=true)
+
+[zsh prompt documentation](http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html#Prompt-Expansion)
+
+OR:
+
+[Customize the MacOS Terminal ORIGION Artical](https://medium.com/dev-genius/customize-the-macos-terminal-zsh-4cb387e4f447)
+
+默认提示符为：
+
+PROMPT='%n@%m %. %% '
+
+Explanation of components:
+
+```
+%n  $USERNAME
+%m  The hostname up to the first ‘.’
+%.  Current directory
+%%  Character '%'
+```
+
+设置为：`echo $PROMPT`
+
+    %D %*:%~ %%
+
+效果如下：
+
+    21-01-27 0:57:04:/usr/local % ls
 
 ### 表格示例
 
