@@ -9,7 +9,9 @@ macOs(m1)常见问题及技巧
     - [Finder(访达)](#finder访达)
         - [显示隐藏文件](#显示隐藏文件)
         - [默认显示列表视图](#默认显示列表视图)
-        - [自定义快捷键](#自定义快捷键)
+    - [自定义快捷键](#自定义快捷键)
+    - [设置启动台launchpad上的图标大小](#设置启动台launchpad上的图标大小)
+    - [显示桌面的快捷键](#显示桌面的快捷键)
     - [终端](#终端)
         - [自定义提示符](#自定义提示符)
         - [表格示例](#表格示例)
@@ -46,9 +48,24 @@ macOs(m1)常见问题及技巧
 
 打开访达，顶部菜单显示，查看显示选项。
 
-### 自定义快捷键
+## 自定义快捷键
 
 ![plugin img](imgs/cshortcutkey.png?raw=true)
+
+## 设置启动台launchpad上的图标大小
+
+事实上是设置启动台图标的行数和列数。默认是5行7列。
+
+Copy and paste the below command and hit enter:
+
+```
+defaults write com.apple.dock springboard-rows -int 6
+defaults write com.apple.dock springboard-columns -int 9
+killall Dock
+```
+## 显示桌面的快捷键
+
+Command+F3，其中F3单独使用是调度中心。Mission Control。
 
 ## 终端
 
