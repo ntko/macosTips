@@ -48,6 +48,34 @@ macOs(m1)常见问题及技巧
 
 打开访达，顶部菜单显示，查看显示选项。
 
+或者：
+Change default view style in OS X Finder
+
+    defaults write com.apple.Finder FXPreferredViewStyle type
+
+Change ‘type’ at the end the command with one of the following choices:
+
+    Flwv ▸ Cover Flow View
+    Nlsv ▸ List View
+    clmv ▸ Column View
+    icnv ▸ Icon View
+
+For example, to always use the column view, the defaults command would be as follows:
+
+    defaults write com.apple.Finder FXPreferredViewStyle clmv
+Restart Finder for changes to take effect:
+
+    killall Finder
+Restore to default setting with:
+
+    defaults write com.apple.Finder FXPreferredViewStyle icnv
+
+>注：default write com.... 实际上是写入了以下系统文件：
+    
+    Macintosh HD > Users > Your User > Library ( It's a Hidden Folder ) > Preferences >  " com.apple.finder.plist " 
+
+ ![finder.plist img](imgs/finder.plist.png?raw=true)   
+
 ## 自定义快捷键
 
 ![plugin img](imgs/cshortcutkey.png?raw=true)
