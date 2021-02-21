@@ -14,6 +14,8 @@ macOs(m1)常见问题及技巧
     - [显示桌面的快捷键](#显示桌面的快捷键)
     - [终端](#终端)
         - [自定义提示符](#自定义提示符)
+- [开发相关](#开发相关)
+    - [macOS升级之后git无法使用](#macos升级之后git无法使用)
         - [表格示例](#表格示例)
 
 <!-- /TOC -->
@@ -133,6 +135,30 @@ Explanation of components:
 效果如下：
 
     21-01-27 0:57:04:/usr/local % ls
+
+# 开发相关
+
+## macOS升级之后git无法使用
+
+```
+$ git pull
+xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools),
+missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
+```
+
+The fix, luckily, is pretty straight forward. Install the Xcode toolkit! Even if you had it installed before, you might have to re-register it or update it to the latest version.
+
+```
+$ xcode-select --install
+```
+
+If that doesn’t work, force it to reset. You’ll need sudo access for this one.
+
+```
+$ sudo xcode-select --reset
+```
+
+If even that fails, go to the [Apple developer download section](https://developer.apple.com/download/more/) and download Xcode manually.
 
 ### 表格示例
 
