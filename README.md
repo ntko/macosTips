@@ -6,6 +6,7 @@ macOs(m1)常见问题及技巧
 <!-- TOC -->
 
 - [初步使用及配置问题](#初步使用及配置问题)
+    - [macM1 SSD问题？](#macm1-ssd问题)
     - [Finder(访达)](#finder访达)
         - [显示隐藏文件](#显示隐藏文件)
         - [默认显示列表视图](#默认显示列表视图)
@@ -21,6 +22,16 @@ macOs(m1)常见问题及技巧
 <!-- /TOC -->
 
 # 初步使用及配置问题
+
+## macM1 SSD问题？
+
+S.M.A.R.T. Monitoring Tools 安裝連結：
+[https://bit.ly/3kmwZxm​](https://bit.ly/3kmwZxm​)
+
+於終端機貼上下方指令：
+```
+/usr/local/sbin/smartctl -a /dev/disk0
+```
 
 ## Finder(访达)
 
