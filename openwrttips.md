@@ -57,6 +57,11 @@ vim /etc/samba/smb.conf
 
 system->Mount Points->下方的Mount Points，Edit->Advanced Setting FileSystem:ntfs-3g 重点 Mount Options: nls=utf8  常规设置 Enable。保存应用。
 
+![mountpoints.png img](imgs/mountpoints.png?raw=true)
+
+> 重点
+
+![editmountpt.png img](imgs/editmountpt.png?raw=true)
 ```
 cat /etc/config/fstab 
 
@@ -90,6 +95,8 @@ smbpasswd -a root , and input SMB password twice.
 cat /etc/samba/smbpasswd
 
 services->网络共享->共享用户->root 权限0777
+
+![netshare.png img](imgs/netshare.png?raw=true)
 
  opkg install luci-i18n-samba-zh-cn
 
