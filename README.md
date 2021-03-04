@@ -17,6 +17,8 @@ macOs(m1)常见问题及技巧
         - [自定义提示符](#自定义提示符)
 - [开发相关](#开发相关)
     - [macOS升级之后git无法使用](#macos升级之后git无法使用)
+    - [Updating credentials from the macOS Keychain](#updating-credentials-from-the-macos-keychain)
+    - [Changing a remote's URL](#changing-a-remotes-url)
         - [表格示例](#表格示例)
 
 <!-- /TOC -->
@@ -170,6 +172,15 @@ $ sudo xcode-select --reset
 ```
 
 If even that fails, go to the [Apple developer download section](https://developer.apple.com/download/more/) and download Xcode manually.
+
+## Updating credentials from the macOS Keychain
+
+REF: [Updating credentials from the macOS Keychain](https://docs.github.com/en/github/using-git/updating-credentials-from-the-macos-keychain)
+
+## Changing a remote's URL
+
+REF:[Changing a remote's URL](https://docs.github.com/en/github/using-git/changing-a-remotes-url#switching-remote-urls-from-ssh-to-https)
+
 
 ### 表格示例
 
