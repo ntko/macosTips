@@ -2,6 +2,7 @@ opwnwrt添加usb和samba支持
 
 https://openwrt.org/docs/guide-user/services/nas/usb-storage-samba-webinterface
 
+```
 opkg update
 
 opkg list-installed | grep usb
@@ -23,6 +24,8 @@ opkg install kmod-fs-ext4
 opkg install kmod-fs-exfat
 
 opkg install kmod-fs-ntfs
+
+opkg install kmod-fs-vfat
 
 opkg install ntfs-3g
 
@@ -55,6 +58,8 @@ vim /etc/samba/smb.conf
 
 \#invalid users = root //comment this
 
+```
+
 system->Mount Points->下方的Mount Points，Edit->Advanced Setting FileSystem:ntfs-3g 重点 Mount Options: nls=utf8  常规设置 Enable。保存应用。
 
 ![mountpoints.png img](imgs/mountpoints.png?raw=true)
@@ -63,6 +68,8 @@ system->Mount Points->下方的Mount Points，Edit->Advanced Setting FileSystem:
 
 ![editmountpt.png img](imgs/editmountpt.png?raw=true)
 ```
+ntfs的:
+
 cat /etc/config/fstab 
 
 config global
@@ -81,6 +88,27 @@ config mount
 	option options 'nls=utf8'
 ```
 ```
+
+fat32的：
+
+cat /etc/config/fstab 
+
+config global
+	option anon_swap '0'
+	option anon_mount '0'
+	option auto_swap '1'
+	option auto_mount '1'
+	option delay_root '5'
+	option check_fs '0'
+
+config mount
+	option target '/mnt/sda1'
+	option uuid '9C50-2BA8'
+	option enabled '1'
+	option options 'iocharset=utf8' //这儿解决中文问题
+```
+```
+
 block info
 /dev/mtdblock3: UUID="692974698" VERSION="1" TYPE="ubi"
 /dev/mtdblock5: UUID="1316725210" VERSION="1" TYPE="ubi"
@@ -98,12 +126,14 @@ services->网络共享->共享用户->root 权限0777
 
 ![netshare.png img](imgs/netshare.png?raw=true)
 
- opkg install luci-i18n-samba-zh-cn
+
+```
+opkg install luci-i18n-samba-zh-cn
 
 service samba restart
 
 dmesg //显示内核信息
 
-opkg install luci-i18n-samba-zh-cnopkg list-upgradable | cut -f 1 -d ' ' | xargs opkg upgrade
-
+opkg list-upgradable | cut -f 1 -d ' ' | xargs opkg upgrade
+```
 
